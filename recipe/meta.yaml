@@ -12,20 +12,18 @@ source:
         - have_openssl.patch
 
 build:
-    number: 0
-    # FIXME: until we solve the postgresql package.
-    skip: True  # [win]
+    number: 1
 
 requirements:
     build:
-        - python
-        - postgresql
         - openssl 1.0.*
+        - postgresql
+        - python
     run:
         # libpq is a repackaging of only the library to connect to postgres
         - libpq
-        - python
         - openssl 1.0.*
+        - python
 
 test:
     imports:
