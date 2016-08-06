@@ -1,4 +1,5 @@
-{% set version = "2.6.1" %}
+{% set version = "2.6.2" %}
+{% set sha256 = "70490e12ed9c5c818ecd85d185d363335cc8a8cbf7212e3c185431c79ff8c05c" %}
 
 package:
     name: psycopg2
@@ -7,11 +8,9 @@ package:
 source:
     fn: psycopg2-{{ version }}.tar.gz
     url: https://pypi.python.org/packages/source/p/psycopg2/psycopg2-{{ version }}.tar.gz
-    md5: 842b44f8c95517ed5b792081a2370da1
+    sha256: {{ sha256 }}
     patches:
         - have_openssl.patch
-        # VS 2013+ have built-in support for round, which conflicts with definition in psycopg.
-        - round_msvc.patch  # [win and py>=35]
 
 build:
     number: 1
