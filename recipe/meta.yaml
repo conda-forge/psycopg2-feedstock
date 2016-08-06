@@ -7,7 +7,7 @@ package:
 
 source:
     fn: psycopg2-{{ version }}.tar.gz
-    url: https://pypi.python.org/packages/source/p/psycopg2/psycopg2-{{ version }}.tar.gz
+    url: https://pypi.io/packages/source/p/psycopg2/psycopg2-{{ version }}.tar.gz
     sha256: {{ sha256 }}
     patches:
         - have_openssl.patch
