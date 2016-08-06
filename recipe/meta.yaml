@@ -10,6 +10,8 @@ source:
     md5: 842b44f8c95517ed5b792081a2370da1
     patches:
         - have_openssl.patch
+        # VS 2013+ have built-in support for round, which conflicts with definition in psycopg.
+        - round_msvc.patch  # [win and py>=35]
 
 build:
     number: 1
