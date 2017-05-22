@@ -1,5 +1,5 @@
-{% set version = "2.6.2" %}
-{% set sha256 = "70490e12ed9c5c818ecd85d185d363335cc8a8cbf7212e3c185431c79ff8c05c" %}
+{% set version = "2.7.1" %}
+{% set sha256 = "86c9355f5374b008c8479bc00023b295c07d508f7c3b91dbd2e74f8925b1d9c6" %}
 
 package:
   name: psycopg2
