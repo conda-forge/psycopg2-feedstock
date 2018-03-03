@@ -1,24 +1,23 @@
-{% set version = "2.7.3.2" %}
-{% set sha256 = "5c3213be557d0468f9df8fe2487eaf2990d9799202c5ff5cb8d394d09fad9b2a" %}
+{% set version = "2.7.4" %}
 
 package:
   name: psycopg2
   version: {{ version }}
 
 source:
-  fn: psycopg2-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/p/psycopg2/psycopg2-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: 8bf51191d60f6987482ef0cfe8511bbf4877a5aa7f313d7b488b53189cf26209
   patches:
     - have_openssl.patch
 
 build:
   number: 0
-  script: python setup.py install  # [win]
+  script: python -m pip install --no-deps --ignore-installed .  # [win]
 
 requirements:
   build:
     - python
+    - pip
     - openssl 1.0.*
     - postgresql
   run:
