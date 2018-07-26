@@ -7,8 +7,11 @@ Package license: LGPL, BSD-like, ZPL
 
 Feedstock license: BSD 3-Clause
 
-Summary: Python-PostgreSQL Database Adapter
+Summary: PostgreSQL database adapter for Python
 
+Psycopg is the most popular PostgreSQL adapter for the Python programming
+language. Its main features are the complete implementation of the Python DB
+API 2.0 specification and the thread safety.
 
 
 Current build status
