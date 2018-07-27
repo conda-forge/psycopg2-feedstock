@@ -11,20 +11,21 @@ source:
     - have_openssl.patch
 
 build:
-  number: 0
-  script: python -m pip install --no-deps --ignore-installed .  # [win]
+  number: 1
 
 requirements:
   build:
+    - {{ compiler('c') }}
+  host:
     - python
     - pip
-    - openssl 1.0.*
+    - openssl
     - postgresql
   run:
     - python
     # libpq is a repackaging of only the library to connect to postgres
     - libpq
-    - openssl 1.0.*
+    - openssl
 
 test:
   imports:
@@ -34,7 +35,16 @@ test:
 about:
   home: http://initd.org/psycopg/
   license: LGPL, BSD-like, ZPL
-  summary: 'Python-PostgreSQL Database Adapter'
+  license_family: LGPL
+  license_file: LICENSE
+  summary: PostgreSQL database adapter for Python
+  description: |
+    Psycopg is the most popular PostgreSQL adapter for the Python programming
+    language. Its main features are the complete implementation of the Python DB
+    API 2.0 specification and the thread safety.
+  doc_url: http://initd.org/psycopg/docs/
+  doc_source_url: https://github.com/psycopg/psycopg2/blob/master/doc/src/index.rst
+  dev_url: https://github.com/psycopg/psycopg2/
 
 extra:
   recipe-maintainers:
