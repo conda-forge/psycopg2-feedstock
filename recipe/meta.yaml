@@ -1,4 +1,4 @@
-{% set version = "2.8" %}
+{% set version = "2.8.1" %}
 
 package:
   name: psycopg2
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/psycopg2/psycopg2-{{ version }}.tar.gz
-  sha256: 49c5838d90e83217909db3789d30a105385b5e696ec5168cda645546c542f35a
+  sha256: b4a475ce87eabc0607e068a3c704d0aa0820237ed78d493b8e2d880eb73cd7fe
   patches:
     - have_openssl.patch
 
