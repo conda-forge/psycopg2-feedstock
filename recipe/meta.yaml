@@ -11,7 +11,7 @@ source:
     - have_openssl.patch
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -34,7 +34,7 @@ test:
 
 about:
   home: http://initd.org/psycopg/
-  license: LGPL, BSD-like, ZPL
+  license: LGPL-3.0-or-later
   license_family: LGPL
   license_file: LICENSE
   summary: PostgreSQL database adapter for Python
