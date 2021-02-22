@@ -22,13 +22,13 @@ requirements:
   host:
     - python
     - pip
-    - openssl
+    - openssl  # [win]
     - postgresql
   run:
     - python
     # libpq is a repackaging of only the library to connect to postgres
     - libpq
-    - openssl
+    - openssl  # [win]
 
 test:
   imports:
