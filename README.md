@@ -1,5 +1,5 @@
-About psycopg2
-==============
+About psycopg2-split
+====================
 
 Home: http://initd.org/psycopg/
 
@@ -231,20 +231,22 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-psycopg2-green.svg)](https://anaconda.org/conda-forge/psycopg2) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/psycopg2.svg)](https://anaconda.org/conda-forge/psycopg2) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/psycopg2.svg)](https://anaconda.org/conda-forge/psycopg2) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/psycopg2.svg)](https://anaconda.org/conda-forge/psycopg2) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-psycopg2--binary-green.svg)](https://anaconda.org/conda-forge/psycopg2-binary) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/psycopg2-binary.svg)](https://anaconda.org/conda-forge/psycopg2-binary) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/psycopg2-binary.svg)](https://anaconda.org/conda-forge/psycopg2-binary) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/psycopg2-binary.svg)](https://anaconda.org/conda-forge/psycopg2-binary) |
 
-Installing psycopg2
-===================
+Installing psycopg2-split
+=========================
 
-Installing `psycopg2` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `psycopg2-split` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `psycopg2` can be installed with:
+Once the `conda-forge` channel has been enabled, `psycopg2, psycopg2-binary` can be installed with:
 
 ```
-conda install psycopg2
+conda install psycopg2 psycopg2-binary
 ```
 
 It is possible to list all of the versions of `psycopg2` available on your platform with:
@@ -292,26 +294,26 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating psycopg2-feedstock
-===========================
+Updating psycopg2-split-feedstock
+=================================
 
-If you would like to improve the psycopg2 recipe or build a new
+If you would like to improve the psycopg2-split recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/psycopg2-feedstock are
+Note that all branches in the conda-forge/psycopg2-split-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
  * If the version of a package **is not** being increased, please add or increase
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string).
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string).
  * If the version of a package **is** being increased, please remember to return
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string)
    back to 0.
 
 Feedstock Maintainers
@@ -319,4 +321,5 @@ Feedstock Maintainers
 
 * [@msarahan](https://github.com/msarahan/)
 * [@ocefpaf](https://github.com/ocefpaf/)
+* [@xylar](https://github.com/xylar/)
 
