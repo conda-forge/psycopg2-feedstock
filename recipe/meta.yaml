@@ -52,6 +52,7 @@ outputs:
     requirements:
       host:
         - python
+        - pip
       run:
         - python
         - {{ pin_subpackage(name, max_pin='x.x.x.x.x.x') }}
