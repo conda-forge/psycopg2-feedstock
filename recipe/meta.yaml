@@ -44,8 +44,11 @@ outputs:
       requires:
         - pip
 
-  # alternative name for the package
+  # alternative name for the package, patched to rename the package in the
+  # metadata so pip check will pass for packages that depend on pyscopg2-binary
   - name: psycopg2-binary
+    script: install_psycopg2-binary.sh  # [unix]
+    script: install_psycopg2-binary.bat  # [win]
     requirements:
       host:
         - python
