@@ -47,17 +47,16 @@ outputs:
   # alternative name for the package, patched to rename the package in the
   # metadata so pip check will pass for packages that depend on pyscopg2-binary
   - name: psycopg2-binary
-    script: install_psycopg2-binary.sh  # [unix]
-    script: install_psycopg2-binary.bat  # [win]
+    script: install_psycopg2-binary.sh
+    build:
+      noarch: python
+      skip: true  # [not linux or py!=38 or ppc64le or aarch64]
     requirements:
-      build:
-        - python                                 # [build_platform != target_platform]
-        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
       host:
-        - python
+        - python >=3.6
         - pip
       run:
-        - python
+        - python >=3.6
         - {{ pin_subpackage(name, max_pin='x.x.x.x.x.x') }}
     test:
       imports:
