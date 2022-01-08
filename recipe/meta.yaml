@@ -1,84 +1,103 @@
-{% set name = "psycopg2" %}
-{% set version = "2.9.3" %}
+{% set name = "psycopg" %}
+{% set version = "3.0.8" %}
+{% set build_number = 0 %}
 
 package:
-  name: {{ name|lower }}-split
+  name: psycopg-split
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/p/psycopg2/psycopg2-{{ version }}.tar.gz
-  sha256: 8e841d1bf3434da985cc5ef13e6f75c8981ced601fd70cc6bf33351b91562981
-  patches:
-    - have_openssl.patch
+  - folder: psycopg
+    url: https://pypi.io/packages/source/p/psycopg/psycopg-{{ version }}.tar.gz
+    sha256: d803be0de54c26ee8c06fd73b6391f809efbcde6a5bbdc118a1a66c2fb4cf944
+
+  - folder: psycopg-c
+    url: https://pypi.io/packages/source/p/psycopg-c/psycopg-c-{{ version }}.tar.gz
+    sha256: adb095ab0e0f9dc5584811558fa7584e70b4aeec7118f0e6640b8be9c5f895a0
 
 build:
-  number: 0
+  number: {{ build_number }}
+
+requirements:
+  host:
+    - python
+  run:
+    - python
 
 outputs:
-  - name: {{ name }}
-    script: install_psycopg2.sh  # [unix]
-    script: install_psycopg2.bat  # [win]
+
+  - name: psycopg-c
+    build:
+      number: {{ build_number }}
+      script: cd psycopg-c && {{ PYTHON }} -m pip install . -vv
+
     requirements:
       build:
+        - {{ compiler('c') }}
         - python                                 # [build_platform != target_platform]
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
         - postgresql                             # [build_platform != target_platform]
-        - {{ compiler('c') }}
       host:
         - python
         - pip
-        - openssl  # [not linux]
         - postgresql
       run:
-        - python
         # libpq is a repackaging of only the library to connect to postgres
         - libpq
-        - openssl  # [not linux]
+        - python
 
     test:
-      imports:
-        - psycopg2
-        - psycopg2._psycopg
       commands:
         - pip check
       requires:
         - pip
 
-  # alternative name for the package, patched to rename the package in the
-  # metadata so pip check will pass for packages that depend on pyscopg2-binary
-  - name: psycopg2-binary
-    script: install_psycopg2-binary.sh
+  - name: psycopg
     build:
-      noarch: python
-      skip: true  # [not linux or py!=38 or ppc64le or aarch64]
+      number: {{ build_number }}
+      script: cd psycopg && {{ PYTHON }} -m pip install . -vv
+
     requirements:
+      build:
+        - python                                 # [build_platform != target_platform]
+        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+        - postgresql                             # [build_platform != target_platform]
       host:
-        - python >=3.6
+        - python
         - pip
+        - backports.zoneinfo  # [py<39]
+        - postgresql
+        - typing-extensions  # [py<38]
       run:
-        - python >=3.6
-        - {{ pin_subpackage(name, max_pin='x.x.x.x.x.x') }}
+        - python
+        - {{ pin_subpackage('psycopg-c', max_pin='x.x.x.x.x.x') }}
+        - backports.zoneinfo >=0.2.0  # [py<39]
+        # libpq is a repackaging of only the library to connect to postgres
+        - libpq
+        - typing-extensions >=3.10  # [py<38]
+
     test:
       imports:
-        - psycopg2
+        - psycopg
+        - psycopg.pq
+        - psycopg_c
       commands:
         - pip check
       requires:
         - pip
 
 about:
-  home: http://initd.org/psycopg/
-  license: LGPL-3.0-or-later
-  license_family: LGPL
-  license_file: LICENSE
+  home: https://psycopg.org/psycopg3/
   summary: PostgreSQL database adapter for Python
   description: |
-    Psycopg is the most popular PostgreSQL adapter for the Python programming
-    language. Its main features are the complete implementation of the Python DB
-    API 2.0 specification and the thread safety.
-  doc_url: http://initd.org/psycopg/docs/
-  doc_source_url: https://github.com/psycopg/psycopg2/blob/master/doc/src/index.rst
-  dev_url: https://github.com/psycopg/psycopg2/
+    Psycopg 3 is a newly designed PostgreSQL database adapter for the Python
+    programming language. Psycopg 3 presents a familiar interface for everyone
+    who has used Psycopg 2 or any other DB-API 2.0 database adapter, but allows
+    to use more modern PostgreSQL and Python features.
+  license: LGPL-3.0-or-later
+  license_file: LICENSE.txt
+  doc_url: https://www.psycopg.org/psycopg3/docs/
+  dev_url: https://github.com/psycopg/psycopg/
 
 extra:
   recipe-maintainers:
