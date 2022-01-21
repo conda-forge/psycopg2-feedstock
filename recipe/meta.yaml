@@ -27,9 +27,10 @@ requirements:
 outputs:
 
   - name: psycopg-c
+    script: install_psycopg-c.sh  # [linux and py<=38]
     build:
       number: {{ build_number }}
-      script: cd psycopg-c && {{ PYTHON }} -m pip install . -vv
+      script: cd psycopg-c && {{ PYTHON }} -m pip install . -vv  # [not linux or py>38]
 
     requirements:
       build:
