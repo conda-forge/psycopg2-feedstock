@@ -76,6 +76,7 @@ outputs:
         # libpq is a repackaging of only the library to connect to postgres
         - libpq
         - typing-extensions >=3.10  # [py<38]
+        - tzdata  # [win]
 
     test:
       imports:
