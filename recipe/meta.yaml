@@ -1,5 +1,5 @@
 {% set name = "psycopg" %}
-{% set version = "3.0.11" %}
+{% set version = "3.0.12" %}
 {% set build_number = 0 %}
 
 package:
@@ -9,11 +9,11 @@ package:
 source:
   - folder: psycopg
     url: https://pypi.io/packages/source/p/psycopg/psycopg-{{ version }}.tar.gz
-    sha256: 5dfe409eefc91890602dff18ee17b3815e803d48f87de48f3fa8587653a5a2fb
+    sha256: cede6d073a73ace182e6f14dd7410cdfe049a7655ab3f338447fe1a293a3a2cb
 
   - folder: psycopg-c
     url: https://pypi.io/packages/source/p/psycopg-c/psycopg-c-{{ version }}.tar.gz
-    sha256: a7979075dbdeddd4af420fc4d7ce467dfbd858e6f28fd212311c7accffe9e126
+    sha256: 7f64b8dee6942b0cdc61fa444d81a1f9332149deafcaf1ff1814ed2212695f56
 
 build:
   number: {{ build_number }}
@@ -45,8 +45,7 @@ outputs:
       run:
         # libpq is a repackaging of only the library to connect to postgres
         - libpq
-        - python
-
+        - python  
     test:
       commands:
         - pip check
@@ -69,6 +68,7 @@ outputs:
         - backports.zoneinfo  # [py<39]
         - postgresql
         - typing-extensions  # [py<38]
+        - tzdata  # [win]
       run:
         - python
         - {{ pin_subpackage('psycopg-c', max_pin='x.x.x.x.x.x') }}
