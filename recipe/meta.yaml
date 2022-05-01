@@ -45,8 +45,7 @@ outputs:
       run:
         # libpq is a repackaging of only the library to connect to postgres
         - libpq
-        - python
-
+        - python  
     test:
       commands:
         - pip check
@@ -69,6 +68,7 @@ outputs:
         - backports.zoneinfo  # [py<39]
         - postgresql
         - typing-extensions  # [py<38]
+        - tzdata  # [win]
       run:
         - python
         - {{ pin_subpackage('psycopg-c', max_pin='x.x.x.x.x.x') }}
