@@ -1,5 +1,5 @@
 {% set name = "psycopg" %}
-{% set version = "3.0.14" %}
+{% set version = "3.0.15" %}
 {% set build_number = 0 %}
 
 package:
@@ -9,11 +9,11 @@ package:
 source:
   - folder: psycopg
     url: https://pypi.io/packages/source/p/psycopg/psycopg-{{ version }}.tar.gz
-    sha256: 9da6b46170dd78e2c5e072ac380a7c89b2af3381c20383118ef5bc66610e77f8
+    sha256: 1c5637f47e9a4d9b742a0b101f39189bebae0f625bfdfb0cf8a54dd5fe677610
 
   - folder: psycopg-c
     url: https://pypi.io/packages/source/p/psycopg-c/psycopg-c-{{ version }}.tar.gz
-    sha256: 17ad0dee7ec26ef46686beafd65e57c9bf7153f8cd0273d8c140a689de8c0c62
+    sha256: 6de99cb85274135d5d34a40028f0c06f56af637026fbb85f7b38ce689e9a16e7
 
 build:
   number: {{ build_number }}
