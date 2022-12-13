@@ -1,6 +1,6 @@
 {% set name = "psycopg" %}
-{% set version = "3.1.4" %}
-{% set build_number = 1 %}
+{% set version = "3.1.5" %}
+{% set build_number = 0 %}
 
 package:
   name: psycopg-split
@@ -9,11 +9,11 @@ package:
 source:
   - folder: psycopg
     url: https://pypi.io/packages/source/p/psycopg/psycopg-{{ version }}.tar.gz
-    sha256: 6874dbaba583cc6663437604bf45f7c244b5fd702f88af6211cd5a74e8ee3a8a
+    sha256: e87074f289b7c9bb4cb6e2aaa069e8bd9f9a260221c7170ad90052042ff5577b
 
   - folder: psycopg-c
     url: https://pypi.io/packages/source/p/psycopg-c/psycopg-c-{{ version }}.tar.gz
-    sha256: de3a2883bf46dd2d151f3332b9ecb15fce0ff6ff302a196d1e9de6f36b79eeaa
+    sha256: 6d0c2f5d57cdde8ecd714563b5d8b351e173846509ff4bb5a18783d8d218f545
 
 build:
   number: {{ build_number }}
