@@ -1,11 +1,11 @@
-About psycopg-split
-===================
+About psycopg-split-feedstock
+=============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/psycopg2-feedstock/blob/main/LICENSE.txt)
 
 Home: https://psycopg.org/psycopg3/
 
 Package license: LGPL-3.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/psycopg2-feedstock/blob/main/LICENSE.txt)
 
 Summary: PostgreSQL database adapter for Python
 
