@@ -10,6 +10,8 @@ source:
   - folder: psycopg
     url: https://pypi.io/packages/source/p/psycopg/psycopg-{{ version }}.tar.gz
     sha256: ab400f207a8c120bafdd8077916d8f6c0106e809401378708485b016508c30c9
+    patches:
+      - 0001-remove-tzdata-for-pip-check.patch
 
   - folder: psycopg-c
     url: https://pypi.io/packages/source/p/psycopg-c/psycopg-c-{{ version }}.tar.gz
