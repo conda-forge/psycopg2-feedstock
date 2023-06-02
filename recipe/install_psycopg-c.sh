@@ -9,4 +9,4 @@ export LDSHARED=$(${PYTHON} ${RECIPE_DIR}/get_ldshared.py)
 echo CC: ${CC}
 echo LDSHARED: ${LDSHARED}
 
-${PYTHON} -m pip install . -vv
+${PYTHON} -m pip install . -vv --no-deps
