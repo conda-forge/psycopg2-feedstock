@@ -1,6 +1,6 @@
 {% set name = "psycopg" %}
 {% set version = "3.1.12" %}
-{% set build_number = 0 %}
+{% set build_number = 1 %}
 
 package:
   name: psycopg-split
