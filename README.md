@@ -259,6 +259,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-psycopg2-green.svg)](https://anaconda.org/conda-forge/psycopg2) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/psycopg2.svg)](https://anaconda.org/conda-forge/psycopg2) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/psycopg2.svg)](https://anaconda.org/conda-forge/psycopg2) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/psycopg2.svg)](https://anaconda.org/conda-forge/psycopg2) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-psycopg2--binary-green.svg)](https://anaconda.org/conda-forge/psycopg2-binary) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/psycopg2-binary.svg)](https://anaconda.org/conda-forge/psycopg2-binary) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/psycopg2-binary.svg)](https://anaconda.org/conda-forge/psycopg2-binary) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/psycopg2-binary.svg)](https://anaconda.org/conda-forge/psycopg2-binary) |
 
 Installing psycopg2-split
 =========================
@@ -270,16 +271,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `psycopg2` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `psycopg2, psycopg2-binary` can be installed with `conda`:
 
 ```
-conda install psycopg2
+conda install psycopg2 psycopg2-binary
 ```
 
 or with `mamba`:
 
 ```
-mamba install psycopg2
+mamba install psycopg2 psycopg2-binary
 ```
 
 It is possible to list all of the versions of `psycopg2` available on your platform with `conda`:
@@ -326,7 +327,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
