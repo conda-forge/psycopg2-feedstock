@@ -1,5 +1,5 @@
 {% set name = "psycopg" %}
-{% set version = "3.1.18" %}
+{% set version = "3.1.19" %}
 {% set build_number = 0 %}
 
 package:
@@ -9,13 +9,13 @@ package:
 source:
   - folder: psycopg
     url: https://pypi.io/packages/source/p/psycopg/psycopg-{{ version }}.tar.gz
-    sha256: 31144d3fb4c17d78094d9e579826f047d4af1da6a10427d91dfcfb6ecdf6f12b
+    sha256: 92d7b78ad82426cdcf1a0440678209faa890c6e1721361c2f8901f0dccd62961
     patches:
       - 0001-remove-tzdata-for-pip-check.patch
 
   - folder: psycopg-c
-    url: https://pypi.io/packages/source/p/psycopg-c/psycopg-c-{{ version }}.tar.gz
-    sha256: ffff0c4a9c0e0b7aadb1acb7b61eb8f886365dd8ef00120ce14676235846ba73
+    url: https://pypi.io/packages/source/p/psycopg-c/psycopg_c-{{ version }}.tar.gz
+    sha256: 8e90f53c430e7d661cb3a9298e2761847212ead1b24c5fb058fc9d0fd9616017
 
 build:
   number: {{ build_number }}
@@ -37,6 +37,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
         - python                                 # [build_platform != target_platform]
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
         - postgresql                             # [build_platform != target_platform]
