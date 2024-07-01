@@ -70,7 +70,6 @@ outputs:
         - pip
         - backports.zoneinfo  # [py<39]
         - postgresql
-        - typing-extensions  # [py<38]
         - tzdata  # [win]
       run:
         - python
@@ -78,7 +77,7 @@ outputs:
         - backports.zoneinfo >=0.2.0  # [py<39]
         # libpq is a repackaging of only the library to connect to postgres
         - libpq
-        - typing-extensions >=4.1
+        - typing-extensions >=4.4
         - tzdata  # [win]
 
     test:
