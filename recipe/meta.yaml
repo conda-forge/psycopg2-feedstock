@@ -1,5 +1,5 @@
 {% set name = "psycopg" %}
-{% set version = "3.1.19" %}
+{% set version = "3.2.1" %}
 {% set build_number = 0 %}
 
 package:
@@ -9,13 +9,13 @@ package:
 source:
   - folder: psycopg
     url: https://pypi.io/packages/source/p/psycopg/psycopg-{{ version }}.tar.gz
-    sha256: 92d7b78ad82426cdcf1a0440678209faa890c6e1721361c2f8901f0dccd62961
+    sha256: dc8da6dc8729dacacda3cc2f17d2c9397a70a66cf0d2b69c91065d60d5f00cb7
     patches:
       - 0001-remove-tzdata-for-pip-check.patch
 
   - folder: psycopg-c
     url: https://pypi.io/packages/source/p/psycopg-c/psycopg_c-{{ version }}.tar.gz
-    sha256: 8e90f53c430e7d661cb3a9298e2761847212ead1b24c5fb058fc9d0fd9616017
+    sha256: 2d09943cc8a855c42c1e23b4298957b7ce8f27bf3683258c52fd139f601f7cda
 
 build:
   number: {{ build_number }}
@@ -70,7 +70,6 @@ outputs:
         - pip
         - backports.zoneinfo  # [py<39]
         - postgresql
-        - typing-extensions  # [py<38]
         - tzdata  # [win]
       run:
         - python
@@ -78,7 +77,7 @@ outputs:
         - backports.zoneinfo >=0.2.0  # [py<39]
         # libpq is a repackaging of only the library to connect to postgres
         - libpq
-        - typing-extensions >=4.1
+        - typing-extensions >=4.4
         - tzdata  # [win]
 
     test:
