@@ -26,6 +26,7 @@ outputs:
         - {{ compiler('c') }}
       host:
         - python
+        - setuptools
         - pip
         - openssl  # [not linux]
         - postgresql
