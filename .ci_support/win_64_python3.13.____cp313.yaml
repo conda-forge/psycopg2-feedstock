@@ -1,7 +1,7 @@
 c_compiler:
 - vs2019
 channel_sources:
-- conda-forge
+- conda-forge/label/python_rc,conda-forge
 channel_targets:
 - conda-forge main
 openssl:
@@ -13,6 +13,9 @@ pin_run_as_build:
 postgresql:
 - '16'
 python:
-- 3.8.* *_cpython
+- 3.13.* *_cp313
 target_platform:
 - win-64
+zip_keys:
+- - python
+  - channel_sources
