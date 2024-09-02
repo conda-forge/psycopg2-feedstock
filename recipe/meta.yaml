@@ -24,6 +24,7 @@ outputs:
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
         - postgresql                             # [build_platform != target_platform]
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
       host:
         - python
         - setuptools
@@ -56,6 +57,7 @@ outputs:
       host:
         - python >=3.6
         - pip
+        - setuptools
       run:
         - python >=3.6
         - {{ pin_subpackage(name, max_pin='x.x.x.x.x.x') }}
