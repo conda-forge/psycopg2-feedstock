@@ -1,6 +1,6 @@
 {% set name = "psycopg" %}
 {% set version = "3.2.1" %}
-{% set build_number = 0 %}
+{% set build_number = 1 %}
 
 package:
   name: psycopg-split
@@ -29,10 +29,9 @@ requirements:
 outputs:
 
   - name: psycopg-c
-    script: install_psycopg-c.sh  # [linux and py<=38]
     build:
       number: {{ build_number }}
-      script: cd psycopg-c && {{ PYTHON }} -m pip install . -vv  # [not linux or py>38]
+      script: cd psycopg-c && {{ PYTHON }} -m pip install . -vv  --no-deps --no-build-isolation
 
     requirements:
       build:
@@ -45,6 +44,7 @@ outputs:
         - python
         - pip
         - postgresql
+        - setuptools
       run:
         # libpq is a repackaging of only the library to connect to postgres
         - libpq
@@ -70,6 +70,7 @@ outputs:
         - pip
         - backports.zoneinfo  # [py<39]
         - postgresql
+        - setuptools
         - tzdata  # [win]
       run:
         - python
