@@ -1,70 +1,11 @@
-diff -ruN psycopg-3.2.1/setup.cfg psycopg-3.2.1-patch/setup.cfg
---- psycopg-3.2.1/setup.cfg	2024-07-01 04:50:20.450693800 +0200
-+++ psycopg-3.2.1-patch/setup.cfg	2024-07-01 08:46:09.297266330 +0200
-@@ -6,14 +6,14 @@
- author_email = daniele.varrazzo@gmail.com
- license = GNU Lesser General Public License v3 (LGPLv3)
- version = 3.2.1
--project_urls = 
-+project_urls =
- 	Homepage = https://psycopg.org/
- 	Documentation = https://psycopg.org/psycopg3/docs/
- 	Changes = https://psycopg.org/psycopg3/docs/news.html
- 	Code = https://github.com/psycopg/psycopg
- 	Issue Tracker = https://github.com/psycopg/psycopg/issues
- 	Download = https://pypi.org/project/psycopg/
--classifiers = 
-+classifiers =
- 	Development Status :: 5 - Production/Stable
- 	Intended Audience :: Developers
- 	License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
-@@ -40,26 +40,25 @@
- python_requires = >= 3.8
- packages = find:
- zip_safe = False
--install_requires = 
-+install_requires =
+diff -ruN psycopg-3.2.2/setup.cfg psycopg-3.2.2-patch/setup.cfg
+--- psycopg-3.2.2/setup.cfg	2024-09-15 14:55:12.552138800 +0200
++++ psycopg-3.2.2-patch/setup.cfg	2024-09-16 10:26:47.179452657 +0200
+@@ -44,7 +44,6 @@
+ install_requires =
  	backports.zoneinfo >= 0.2.0; python_version < "3.9"
- 	typing-extensions >= 4.4
+ 	typing-extensions >= 4.6; python_version < "3.13"
 -	tzdata; sys_platform == "win32"
- 
+
  [options.extras_require]
--c = 
-+c =
- 	psycopg-c == 3.2.1; implementation_name != "pypy"
--binary = 
-+binary =
- 	psycopg-binary == 3.2.1; implementation_name != "pypy"
--pool = 
-+pool =
- 	psycopg-pool
--test = 
-+test =
- 	anyio >= 4.0
- 	mypy >= 1.6
- 	pproxy >= 2.7
- 	pytest >= 6.2.5
- 	pytest-cov >= 3.0
- 	pytest-randomly >= 3.5
--dev = 
-+dev =
- 	ast-comments >= 1.1.2
- 	black >= 24.1.0
- 	codespell >= 2.2
-@@ -68,7 +67,7 @@
- 	mypy >= 1.6
- 	types-setuptools >= 57.4
- 	wheel >= 0.37
--docs = 
-+docs =
- 	Sphinx >= 5.0
- 	furo == 2022.6.21
- 	sphinx-autobuild >= 2021.3.14
-@@ -78,6 +77,6 @@
- psycopg = py.typed
- 
- [egg_info]
--tag_build = 
-+tag_build =
- tag_date = 0
- 
+ c =
