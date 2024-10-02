@@ -9,10 +9,11 @@ source:
   url: https://pypi.io/packages/source/p/psycopg2/psycopg2-{{ version }}.tar.gz
   sha256: d1454bde93fb1e224166811694d600e746430c006fbb031ea06ecc2ea41bf156
   patches:
-    - have_openssl.patch
+    - 0001-have-openssl.patch
+    - 0002-python-3.13.patch
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: {{ name }}
@@ -24,8 +25,10 @@ outputs:
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
         - postgresql                             # [build_platform != target_platform]
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
       host:
         - python
+        - setuptools
         - pip
         - openssl  # [not linux]
         - postgresql
@@ -55,6 +58,7 @@ outputs:
       host:
         - python >=3.6
         - pip
+        - setuptools
       run:
         - python >=3.6
         - {{ pin_subpackage(name, max_pin='x.x.x.x.x.x') }}
