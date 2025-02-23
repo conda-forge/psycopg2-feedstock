@@ -58,6 +58,7 @@ outputs:
   - name: psycopg
     build:
       number: {{ build_number }}
+      noarch: python
       script: cd psycopg && {{ PYTHON }} -m pip install . -vv --no-deps
 
     requirements:
