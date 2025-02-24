@@ -1,6 +1,5 @@
 {% set name = "psycopg" %}
 {% set version = "3.2.5" %}
-{% set build_number = 0 %}
 
 package:
   name: psycopg-split
@@ -18,7 +17,7 @@ source:
     sha256: 57ad4cfd28de278c424aaceb1f2ad5c7910466e315dfe84e403f3c7a0a2ce81b
 
 build:
-  number: {{ build_number }}
+  number: 1
 
 requirements:
   host:
@@ -30,7 +29,6 @@ outputs:
 
   - name: psycopg-c
     build:
-      number: {{ build_number }}
       script: cd psycopg-c && {{ PYTHON }} -m pip install . -vv  --no-deps --no-build-isolation
 
     requirements:
@@ -43,10 +41,9 @@ outputs:
       host:
         - python
         - pip
-        - postgresql
+        - libpq
         - setuptools
       run:
-        # libpq is a repackaging of only the library to connect to postgres
         - libpq
         - python
     test:
@@ -57,30 +54,26 @@ outputs:
 
   - name: psycopg
     build:
-      number: {{ build_number }}
-      script: cd psycopg && {{ PYTHON }} -m pip install . -vv --no-deps
+      script: cd psycopg && {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+      noarch: python
+      skip: true  # [osx or build_platform != target_platform or py!=39]
 
     requirements:
-      build:
-        - python                                 # [build_platform != target_platform]
-        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-        - postgresql                             # [build_platform != target_platform]
       host:
-        - python
+        - python {{ python_min }}
         - pip
-        - backports.zoneinfo  # [py<39]
-        - postgresql
         - setuptools
+        - libpq
         - tzdata  # [win]
       run:
-        - python
+        - python >={{ python_min }}
         - {{ pin_subpackage('psycopg-c', max_pin='x.x.x.x.x.x') }}
-        - backports.zoneinfo >=0.2.0  # [py<39]
-        # libpq is a repackaging of only the library to connect to postgres
+        # for python <3.13 but keeping it for all to stay noarch: python
+        - typing-extensions >=4.6
         - libpq
-        - typing-extensions >=4.6  # [py<313]
         - tzdata  # [win]
-
+        - __unix  # [unix]
+        - __win  # [win]
     test:
       imports:
         - psycopg
@@ -89,6 +82,7 @@ outputs:
       commands:
         - pip check
       requires:
+        - python {{ python_min }}
         - pip
 
 about:
@@ -100,7 +94,7 @@ about:
     who has used Psycopg 2 or any other DB-API 2.0 database adapter, but allows
     to use more modern PostgreSQL and Python features.
   license: LGPL-3.0-or-later
-  license_file: LICENSE.txt
+  license_file: psycopg/LICENSE.txt
   doc_url: https://www.psycopg.org/psycopg3/docs/
   dev_url: https://github.com/psycopg/psycopg/
 
