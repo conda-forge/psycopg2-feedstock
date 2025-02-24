@@ -100,7 +100,7 @@ about:
     who has used Psycopg 2 or any other DB-API 2.0 database adapter, but allows
     to use more modern PostgreSQL and Python features.
   license: LGPL-3.0-or-later
-  license_file: LICENSE.txt
+  license_file: psycopg/LICENSE.txt
   doc_url: https://www.psycopg.org/psycopg3/docs/
   dev_url: https://github.com/psycopg/psycopg/
 
