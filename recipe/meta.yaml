@@ -41,10 +41,9 @@ outputs:
       host:
         - python
         - pip
-        - postgresql
+        - libpq
         - setuptools
       run:
-        # libpq is a repackaging of only the library to connect to postgres
         - libpq
         - python
     test:
