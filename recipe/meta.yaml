@@ -17,7 +17,7 @@ source:
     sha256: b5fd4ce70f82766a122ca5076a36c4d5818eaa9df9bf76870bc83a064ffaed3a
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -54,7 +54,6 @@ outputs:
 
   - name: psycopg
     build:
-      number: 1
       script: cd psycopg && {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
       noarch: python
       skip: true  # [not linux64 or py!=39]
