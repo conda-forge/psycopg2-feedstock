@@ -54,6 +54,7 @@ outputs:
 
   - name: psycopg
     build:
+      number: 1
       script: cd psycopg && {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
       noarch: python
       skip: true  # [py!=39]
