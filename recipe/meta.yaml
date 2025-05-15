@@ -10,7 +10,6 @@ source:
   sha256: 12ec0b40b0273f95296233e8750441339298e6a572f7039da5b260e3c8b60e11
   patches:
     - 0001-have-openssl.patch
-    - 0002-python-3.13.patch
 
 build:
   number: 0
