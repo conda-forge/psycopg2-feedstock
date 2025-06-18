@@ -52,7 +52,7 @@ outputs:
     script: install_psycopg2-binary.sh
     build:
       noarch: python
-      skip: true  # [not linux or py!=313 or ppc64le or aarch64]
+      skip: true  # [not linux or py!=39 or ppc64le or aarch64]
     requirements:
       host:
         - python {{ python_min }}
