@@ -12,7 +12,7 @@ source:
     - 0001-have-openssl.patch
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: {{ name }}
@@ -52,7 +52,7 @@ outputs:
     script: install_psycopg2-binary.sh
     build:
       noarch: python
-      skip: true  # [not linux or py!=38 or ppc64le or aarch64]
+      skip: true  # [not linux or py!=39 or ppc64le or aarch64]
     requirements:
       host:
         - python {{ python_min }}
