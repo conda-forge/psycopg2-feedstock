@@ -56,7 +56,7 @@ outputs:
     build:
       script: cd psycopg && {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
       noarch: python
-      # NOTE: must be kept equal to python_min!
+      # NOTE: must be kept equal to python_min
       skip: true  # [not linux64 or py!=310]
 
     requirements:
