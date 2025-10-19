@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/psycopg2-feedst
 
 Home: https://psycopg.org/psycopg3/
 
-Package license: LGPL-3.0-or-later
+Package license: LGPL-3.0-only
 
 Summary: PostgreSQL database adapter for Python
 
