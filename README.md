@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/psycopg2-feedst
 
 Home: https://psycopg.org/psycopg3/
 
-Package license: LGPL-3.0-or-later
+Package license: LGPL-3.0-only
 
 Summary: PostgreSQL database adapter for Python
 
@@ -259,6 +259,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-psycopg-green.svg)](https://anaconda.org/conda-forge/psycopg) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/psycopg.svg)](https://anaconda.org/conda-forge/psycopg) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/psycopg.svg)](https://anaconda.org/conda-forge/psycopg) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/psycopg.svg)](https://anaconda.org/conda-forge/psycopg) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-psycopg--c-green.svg)](https://anaconda.org/conda-forge/psycopg-c) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/psycopg-c.svg)](https://anaconda.org/conda-forge/psycopg-c) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/psycopg-c.svg)](https://anaconda.org/conda-forge/psycopg-c) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/psycopg-c.svg)](https://anaconda.org/conda-forge/psycopg-c) |
 
 Installing psycopg-split
@@ -271,41 +272,41 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `psycopg-c` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `psycopg, psycopg-c` can be installed with `conda`:
 
 ```
-conda install psycopg-c
-```
-
-or with `mamba`:
-
-```
-mamba install psycopg-c
-```
-
-It is possible to list all of the versions of `psycopg-c` available on your platform with `conda`:
-
-```
-conda search psycopg-c --channel conda-forge
+conda install psycopg psycopg-c
 ```
 
 or with `mamba`:
 
 ```
-mamba search psycopg-c --channel conda-forge
+mamba install psycopg psycopg-c
+```
+
+It is possible to list all of the versions of `psycopg` available on your platform with `conda`:
+
+```
+conda search psycopg --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search psycopg --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search psycopg-c --channel conda-forge
+mamba repoquery search psycopg --channel conda-forge
 
-# List packages depending on `psycopg-c`:
-mamba repoquery whoneeds psycopg-c --channel conda-forge
+# List packages depending on `psycopg`:
+mamba repoquery whoneeds psycopg --channel conda-forge
 
-# List dependencies of `psycopg-c`:
-mamba repoquery depends psycopg-c --channel conda-forge
+# List dependencies of `psycopg`:
+mamba repoquery depends psycopg --channel conda-forge
 ```
 
 
