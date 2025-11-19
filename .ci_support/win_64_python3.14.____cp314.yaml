@@ -3,11 +3,11 @@ c_compiler:
 c_stdlib:
 - vs
 channel_sources:
-- conda-forge,conda-forge/label/python_rc
+- conda-forge
 channel_targets:
 - conda-forge main
 openssl:
-- '3'
+- '3.5'
 pin_run_as_build:
   python:
     min_pin: x.x
@@ -20,6 +20,3 @@ python_min:
 - '3.10'
 target_platform:
 - win-64
-zip_keys:
-- - python
-  - channel_sources
