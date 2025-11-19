@@ -12,7 +12,7 @@ source:
     - 0001-have-openssl.patch
 
 build:
-  number: 3
+  number: 4
 
 outputs:
   - name: {{ name }}
