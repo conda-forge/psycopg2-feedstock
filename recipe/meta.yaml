@@ -1,5 +1,5 @@
 {% set name = "psycopg" %}
-{% set version = "3.2.12" %}
+{% set version = "3.2.13" %}
 
 package:
   name: psycopg-split
@@ -8,16 +8,16 @@ package:
 source:
   - folder: psycopg
     url: https://pypi.org/packages/source/p/psycopg/psycopg-{{ version }}.tar.gz
-    sha256: 85c08d6f6e2a897b16280e0ff6406bef29b1327c045db06d21f364d7cd5da90b
+    sha256: 309adaeda61d44556046ec9a83a93f42bbe5310120b1995f3af49ab6d9f13c1d
     patches:
       - 0001-remove-tzdata-for-pip-check.patch
 
   - folder: psycopg-c
     url: https://pypi.org/packages/source/p/psycopg-c/psycopg_c-{{ version }}.tar.gz
-    sha256: 1c80042067d5df90d184c6fbd58661350b3620f99d87a01c882953c4d5dfa52b
+    sha256: 3f8d69a563f198198aaf3333e3830c68368a4e45cd60faeabca9949f958f6480
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   host:
