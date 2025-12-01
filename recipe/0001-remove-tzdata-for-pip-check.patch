@@ -1,11 +1,11 @@
-diff -ruN psycopg-3.2.2/setup.cfg psycopg-3.2.2-patch/setup.cfg
---- psycopg-3.2.2/setup.cfg	2024-09-15 14:55:12.552138800 +0200
-+++ psycopg-3.2.2-patch/setup.cfg	2024-09-16 10:26:47.179452657 +0200
-@@ -44,7 +44,6 @@
- install_requires =
- 	backports.zoneinfo >= 0.2.0; python_version < "3.9"
- 	typing-extensions >= 4.6; python_version < "3.13"
--	tzdata; sys_platform == "win32"
-
- [options.extras_require]
- c =
+diff -ruN psycopg-3.3.0/pyproject.toml psycopg-3.3.0-patch/pyproject.toml
+--- psycopg-3.3.0/pyproject.toml	2025-12-01 04:30:30.000000000 +0100
++++ psycopg-3.3.0-patch/pyproject.toml	2025-12-01 14:55:42.054856529 +0100
+@@ -39,7 +39,6 @@
+ requires-python = ">= 3.10"
+ dependencies = [
+     "typing-extensions >= 4.6; python_version < '3.13'",
+-    "tzdata; sys_platform == 'win32'",
+ ]
+ 
+ [[project.authors]]
