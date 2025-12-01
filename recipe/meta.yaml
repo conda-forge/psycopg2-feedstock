@@ -42,7 +42,7 @@ outputs:
         - python
         - pip
         - libpq
-        - setuptools
+        - setuptools ==80.3.1
       run:
         - libpq
         - python
@@ -63,7 +63,7 @@ outputs:
       host:
         - python {{ python_min }}
         - pip
-        - setuptools
+        - setuptools >=80.3.1
         - libpq
       run:
         - python >={{ python_min }}
