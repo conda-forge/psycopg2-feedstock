@@ -1,5 +1,5 @@
 {% set name = "psycopg2" %}
-{% set version = "2.9.10" %}
+{% set version = "2.9.11" %}
 
 package:
   name: {{ name|lower }}-split
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/psycopg2/psycopg2-{{ version }}.tar.gz
-  sha256: 12ec0b40b0273f95296233e8750441339298e6a572f7039da5b260e3c8b60e11
+  sha256: 964d31caf728e217c697ff77ea69c2ba0865fa41ec20bb00f0977e62fdcc52e3
   patches:
     - 0001-have-openssl.patch
 
 build:
-  number: 4
+  number: 0
 
 outputs:
   - name: {{ name }}
