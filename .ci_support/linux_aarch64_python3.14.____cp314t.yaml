@@ -21,6 +21,9 @@ postgresql:
 python:
 - 3.14.* *_cp314t
 python_min:
-- '3.10'
+- '3.11'
 target_platform:
 - linux-aarch64
+zip_keys:
+- - python
+  - channel_sources
