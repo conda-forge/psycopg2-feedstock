@@ -27,7 +27,7 @@ outputs:
         - {{ stdlib("c") }}
       host:
         - python
-        - setuptools
+        - setuptools >=70.1
         - pip
         - openssl  # [not linux]
         - postgresql
