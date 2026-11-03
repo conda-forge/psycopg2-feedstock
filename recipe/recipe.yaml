@@ -64,7 +64,6 @@ outputs:
         - pip
         - setuptools >=80.3.1
         - wheel >=0.37
-        - libpq
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage('psycopg-c', upper_bound='x.x.x.x.x.x') }}
