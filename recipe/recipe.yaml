@@ -1,0 +1,101 @@
+schema_version: 1
+
+context:
+  name: psycopg
+  version: "3.3.7"
+
+recipe:
+  name: psycopg-split
+  version: ${{ version }}
+
+source:
+  - url: https://files.pythonhosted.org/packages/source/p/psycopg/psycopg-${{ version }}.tar.gz
+    sha256: 6574f23fd79bf129ee0616b49f6e358faf7ae1bf3a362d2ad599cf8f9c3d4935
+    target_directory: psycopg
+    patches:
+      - 0001-remove-tzdata-for-pip-check.patch
+  - url: https://files.pythonhosted.org/packages/source/p/psycopg-c/psycopg_c-${{ version }}.tar.gz
+    sha256: cf63d929860ce5203a86d9e3089a516c399bb32d621d3c0f210044a1d46054a1
+    target_directory: psycopg-c
+
+build:
+  number: 0
+
+outputs:
+  - package:
+      name: psycopg-c
+    build:
+      script: cd psycopg-c && ${{ PYTHON }} -m pip install . -vv  --no-deps --no-build-isolation
+    requirements:
+      build:
+        - ${{ compiler('c') }}
+        - ${{ stdlib("c") }}
+        - if: build_platform != target_platform
+          then: python
+        - if: build_platform != target_platform
+          then: cross-python_${{ target_platform }}
+        - if: build_platform != target_platform
+          then: postgresql
+      host:
+        - python
+        - pip
+        - libpq
+        # conda-forge didn't build 80.3.1, so pin the lowest available higher version
+        - setuptools ==80.8.0
+      run:
+        - libpq
+        - python
+    tests:
+      - requirements:
+          run:
+            - pip
+        script:
+          - pip check
+  - package:
+      name: psycopg
+    build:
+      # NOTE: must be kept equal to python_min
+      skip: not linux64 or match(python, "!=3.10")
+      noarch: python
+      script: cd psycopg && ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+    requirements:
+      host:
+        - python ${{ python_min }}.*
+        - pip
+        - setuptools >=80.3.1
+        - libpq
+      run:
+        - python >=${{ python_min }}
+        - ${{ pin_subpackage('psycopg-c', upper_bound='x.x.x.x.x.x') }}
+        # for python <3.13 but keeping it for all to stay noarch: python
+        - typing-extensions >=4.6
+        - libpq
+        # skipping tzdata based on https://github.com/conda-forge/psycopg2-feedstock/pull/120
+        # so we don't have to build separately for windows
+    tests:
+      - python:
+          imports:
+            - psycopg
+            - psycopg.pq
+            - psycopg_c
+          pip_check: true
+          python_version: ${{ python_min }}
+
+about:
+  summary: PostgreSQL database adapter for Python
+  description: |
+    Psycopg 3 is a newly designed PostgreSQL database adapter for the Python
+    programming language. Psycopg 3 presents a familiar interface for everyone
+    who has used Psycopg 2 or any other DB-API 2.0 database adapter, but allows
+    to use more modern PostgreSQL and Python features.
+  license: LGPL-3.0-only
+  license_file: psycopg/LICENSE.txt
+  homepage: https://psycopg.org/psycopg3/
+  repository: https://github.com/psycopg/psycopg/
+  documentation: https://www.psycopg.org/psycopg3/docs/
+
+extra:
+  recipe-maintainers:
+    - msarahan
+    - ocefpaf
+    - xylar
