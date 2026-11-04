@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: psycopg
-  version: "3.3.7"
+  version: "3.3.8"
 
 recipe:
   name: psycopg-split
@@ -10,12 +10,12 @@ recipe:
 
 source:
   - url: https://files.pythonhosted.org/packages/source/p/psycopg/psycopg-${{ version }}.tar.gz
-    sha256: 6574f23fd79bf129ee0616b49f6e358faf7ae1bf3a362d2ad599cf8f9c3d4935
+    sha256: 86c135a9a6f5e98404975c5787e620bf436a7807e088baebd1b20fa48d3b4b4f
     target_directory: psycopg
     patches:
       - 0001-remove-tzdata-for-pip-check.patch
   - url: https://files.pythonhosted.org/packages/source/p/psycopg-c/psycopg_c-${{ version }}.tar.gz
-    sha256: cf63d929860ce5203a86d9e3089a516c399bb32d621d3c0f210044a1d46054a1
+    sha256: af81a99b02600e6c2cdf468509c04bb8208500ea60d63f70616e32ea9cb2758f
     target_directory: psycopg-c
 
 build:
@@ -31,10 +31,10 @@ outputs:
         - ${{ compiler('c') }}
         - ${{ stdlib("c") }}
         - if: build_platform != target_platform
-          then: 
-          - python
-          - cross-python_${{ target_platform }}
-          - postgresql
+          then:
+            - python
+            - cross-python_${{ target_platform }}
+            - postgresql
       host:
         - python
         - pip
