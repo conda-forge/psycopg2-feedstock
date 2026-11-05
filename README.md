@@ -43,90 +43,6 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_aarch64_python3.11.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=821&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/psycopg2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_python3.11.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_aarch64_python3.12.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=821&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/psycopg2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_python3.12.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_aarch64_python3.13.____cp313</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=821&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/psycopg2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_python3.13.____cp313" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_aarch64_python3.14.____cp314</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=821&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/psycopg2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_python3.14.____cp314" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_aarch64_python3.14.____cp314t</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=821&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/psycopg2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_python3.14.____cp314t" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_aarch64_python3.15.____cp315</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=821&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/psycopg2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_python3.15.____cp315" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_ppc64le_python3.11.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=821&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/psycopg2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_python3.11.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_ppc64le_python3.12.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=821&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/psycopg2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_python3.12.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_ppc64le_python3.13.____cp313</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=821&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/psycopg2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_python3.13.____cp313" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_ppc64le_python3.14.____cp314</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=821&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/psycopg2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_python3.14.____cp314" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_ppc64le_python3.14.____cp314t</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=821&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/psycopg2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_python3.14.____cp314t" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_ppc64le_python3.15.____cp315</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=821&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/psycopg2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_python3.15.____cp315" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_64_python3.11.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=821&branchName=main">
@@ -223,6 +139,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-psycopg-green.svg)](https://anaconda.org/conda-forge/psycopg) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/psycopg.svg)](https://anaconda.org/conda-forge/psycopg) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/psycopg.svg)](https://anaconda.org/conda-forge/psycopg) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/psycopg.svg)](https://anaconda.org/conda-forge/psycopg) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-psycopg--c-green.svg)](https://anaconda.org/conda-forge/psycopg-c) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/psycopg-c.svg)](https://anaconda.org/conda-forge/psycopg-c) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/psycopg-c.svg)](https://anaconda.org/conda-forge/psycopg-c) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/psycopg-c.svg)](https://anaconda.org/conda-forge/psycopg-c) |
 
 Installing psycopg-c
@@ -242,7 +159,7 @@ How to use
 <summary>With conda</summary>
 
 ```
-conda install psycopg-c
+conda install psycopg psycopg-c
 ```
 
 </details>
@@ -251,7 +168,7 @@ conda install psycopg-c
 <summary>With mamba</summary>
 
 ```
-mamba install psycopg-c
+mamba install psycopg psycopg-c
 ```
 
 </details>
@@ -261,9 +178,9 @@ mamba install psycopg-c
 
 ```
 # for adding to your local project
-pixi add psycopg-c
+pixi add psycopg psycopg-c
 # for installing globally
-pixi global install psycopg-c
+pixi global install psycopg psycopg-c
 ```
 
 </details>
@@ -271,13 +188,13 @@ pixi global install psycopg-c
 Search package versions
 -----------------------
 
-It is possible to list all of the versions of `psycopg-c` available on your platform:
+It is possible to list all of the versions of `psycopg` available on your platform:
 
 <details>
 <summary>With conda</summary>
 
 ```
-conda search psycopg-c --channel conda-forge
+conda search psycopg --channel conda-forge
 ```
 
 </details>
@@ -286,7 +203,7 @@ conda search psycopg-c --channel conda-forge
 <summary>With mamba</summary>
 
 ```
-mamba search psycopg-c --channel conda-forge
+mamba search psycopg --channel conda-forge
 ```
 
 </details>
@@ -295,7 +212,7 @@ mamba search psycopg-c --channel conda-forge
 <summary>With pixi</summary>
 
 ```
-pixi search psycopg-c --channel conda-forge
+pixi search psycopg --channel conda-forge
 ```
 
 </details>
@@ -305,13 +222,13 @@ pixi search psycopg-c --channel conda-forge
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search psycopg-c --channel conda-forge
+mamba repoquery search psycopg --channel conda-forge
 
-# List packages depending on `psycopg-c`:
-mamba repoquery whoneeds psycopg-c --channel conda-forge
+# List packages depending on `psycopg`:
+mamba repoquery whoneeds psycopg --channel conda-forge
 
-# List dependencies of `psycopg-c`:
-mamba repoquery depends psycopg-c --channel conda-forge
+# List dependencies of `psycopg`:
+mamba repoquery depends psycopg --channel conda-forge
 ```
 
 </details>
