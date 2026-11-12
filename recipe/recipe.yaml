@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: psycopg
-  version: "3.3.8"
+  version: "3.3.9"
 
 recipe:
   name: psycopg-split
@@ -10,12 +10,12 @@ recipe:
 
 source:
   - url: https://files.pythonhosted.org/packages/source/p/psycopg/psycopg-${{ version }}.tar.gz
-    sha256: 86c135a9a6f5e98404975c5787e620bf436a7807e088baebd1b20fa48d3b4b4f
+    sha256: 87c1d85c3e0e88e811d3c0b3808f947bd967c6faf34af6cd86fd021f77793d6c
     target_directory: psycopg
     patches:
       - 0001-remove-tzdata-for-pip-check.patch
   - url: https://files.pythonhosted.org/packages/source/p/psycopg-c/psycopg_c-${{ version }}.tar.gz
-    sha256: af81a99b02600e6c2cdf468509c04bb8208500ea60d63f70616e32ea9cb2758f
+    sha256: 591fcbcb40e089235a7f096b9e887e71ccae78fd337aba198d918e33707c5e01
     target_directory: psycopg-c
 
 build:
@@ -54,7 +54,7 @@ outputs:
   - package:
       name: psycopg
     build:
-      number: 1
+      number: 0
       skip:
         - not linux64
         - match(python, "!=${{ python_min }}")
