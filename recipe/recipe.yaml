@@ -19,7 +19,7 @@ source:
     target_directory: psycopg-c
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - package:
@@ -54,7 +54,7 @@ outputs:
   - package:
       name: psycopg
     build:
-      number: 0
+      number: 1
       skip:
         - not linux64
         - match(python, "!=${{ python_min }}")
